@@ -48,7 +48,7 @@
       "profiles/{$name}": ["type:drupal-profile"],
       "modules/contrib/{$name}": ["type:drupal-module"],
       "themes/contrib/{$name}": ["type:drupal-theme"],
-      "libraries/{$name}": ["type:drupal-library"],
+      "libraries/{$name}": ["type:drupal-libraries"],
       "modules/custom/{$name}": ["type:drupal-custom-module"],
       "themes/custom/{$name}": ["type:drupal-custom-theme"],
       "drush/contrib/{$name}": ["type:drupal-drush"]
