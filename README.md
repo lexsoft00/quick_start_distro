@@ -44,10 +44,7 @@ Or just simply download the lastest stable version Quick Start
 <p><strong>Reworked Retina Images</strong><br>  For Tablet and Mobile displays. 
 12 Image Displays to Media Browser, think of each display as a column.
 If you have an image in a col-sm-4 then choose Display 4 for the image.</p>
-<p><img src="/files/project-images/media-retina-display.png" alt="Media Retina Images"></p>
 
 <h3>Quick Start comes with 2 more Features</h3>
 <p><strong>Hero Slider</strong>(for creating front page slider) and <strong>Gallery</strong>(for creating a grid colorbox gallery) both of them disabled by default.</p>
 
-<h3>Supporting organizations:</h3>
-<h3><a href="https://www.getstudio.co.uk" rel="nofollow">GetStudio</a></h3>
