@@ -1,4 +1,4 @@
-#Quick Start for Drupal
+<h2>Quick Start for Drupal</h2>
 Quick Start is inspired from a distribution like <a href="https://www.drupal.org/project/varbase" rel="nofollow">Varbase</a>, <a href="https://www.drupal.org/project/thunder" rel="nofollow">Thunder</a>, <a href="https://www.drupal.org/project/social" rel="nofollow">Open Social</a> to deliver a quick installation for Drupal 8. 
 
 <p>Theming is based on <a href="https://www.drupal.org/project/bootstrap" rel="nofollow">Bootstrap</a> SASS sub-theme called <a href="https://www.drupal.org/project/drupalcoders_bootstrap" rel="nofollow">DrupalCoders</a>.</p>
