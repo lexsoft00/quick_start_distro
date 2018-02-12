@@ -25,14 +25,74 @@
     {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
-    }
+    },
+    {
+      "type": "package",
+      "package": {
+      "name": "enyo/dropzone",
+      "version": "v4.3.0",
+      "type": "drupal-library",
+      "dist": {
+        "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip",
+        "type": "zip"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+      "name": "dinbror/blazy",
+      "version": "1.8.2",
+      "type": "drupal-library",
+      "dist": {
+        "url": "https://github.com/dinbror/blazy/archive/1.8.2.zip",
+        "type": "zip"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+      "name": "kenwheeler/slick",
+      "version": "1.6.0",
+      "type": "drupal-library",
+      "dist": {
+        "url": "https://github.com/kenwheeler/slick/archive/1.6.0.zip",
+        "type": "zip"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+      "name": "ajaxorg/ace-builds",
+      "version": "v1.2.6",
+      "type": "drupal-library",
+      "dist": {
+        "url": "http://github.com/ajaxorg/ace-builds/archive/v1.2.6.zip",
+        "type": "zip"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+      "name": "jackmoore/colorbox",
+      "version": "1.x",
+      "type": "drupal-library",
+      "dist": {
+        "url": "https://github.com/jackmoore/colorbox/archive/1.x.zip",
+        "type": "zip"
+        }
+      }
+    }               
   ],
   "require": {
     "composer/installers": "1.4.0",
     "cweagans/composer-patches": "1.6.4",
     "drupal-composer/drupal-scaffold": "2.4.0",
     "drupal/drupal-library-installer-plugin": "0.3",
-    "drupalcoders/quick_start": "8.x-1.0-beta02"
+    "drupalcoders/quick_start": "dev-8.x-1.x"
   },
   "scripts": {
     "post-install-cmd": [
