@@ -69,7 +69,7 @@
       "version": "v1.2.6",
       "type": "drupal-library",
       "dist": {
-        "url": "http://github.com/ajaxorg/ace-builds/archive/v1.2.6.zip",
+        "url": "https://github.com/ajaxorg/ace-builds/archive/v1.2.6.zip",
         "type": "zip"
         }
       }
