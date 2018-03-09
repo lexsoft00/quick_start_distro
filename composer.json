@@ -90,7 +90,7 @@
   "require": {
     "composer/installers": "1.4.0",
     "cweagans/composer-patches": "1.6.4",
-    "drupalcoders/quick_start": "1.0-beta02"
+    "drupalcoders/quick_start": "8.x-1.0-beta04"
   },
   "extra": {
     "installer-paths": {
