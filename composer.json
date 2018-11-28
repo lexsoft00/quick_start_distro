@@ -8,7 +8,7 @@
   "authors": [
     {
       "name": "lexsoft",
-      "homepage": "http://drupalcoders.org/",
+      "homepage": "http://drupalcoders.org",
       "role": "Maintainer"
     }
   ],
@@ -16,105 +16,81 @@
     "issues": "http://drupal.org/project/issues/quick_start",
     "source": "http://cgit.drupalcode.org/quick_start"
   },
-  "repositories": [
-    {
+  "repositories": {
+    "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
     },
-    {
+    "assets": {
       "type": "composer",
       "url": "https://asset-packagist.org"
-    },
-    {
-      "type": "package",
-      "package": {
-      "name": "enyo/dropzone",
-      "version": "v4.3.0",
-      "type": "drupal-library",
-      "dist": {
-        "url": "https://github.com/enyo/dropzone/archive/v4.3.0.zip",
-        "type": "zip"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-      "name": "dinbror/blazy",
-      "version": "1.8.2",
-      "type": "drupal-library",
-      "dist": {
-        "url": "https://github.com/dinbror/blazy/archive/1.8.2.zip",
-        "type": "zip"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-      "name": "kenwheeler/slick",
-      "version": "1.6.0",
-      "type": "drupal-library",
-      "dist": {
-        "url": "https://github.com/kenwheeler/slick/archive/1.6.0.zip",
-        "type": "zip"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-      "name": "ajaxorg/ace-builds",
-      "version": "v1.2.6",
-      "type": "drupal-library",
-      "dist": {
-        "url": "https://github.com/ajaxorg/ace-builds/archive/v1.2.6.zip",
-        "type": "zip"
-        }
-      }
-    },
-    {
-      "type": "package",
-      "package": {
-      "name": "jackmoore/colorbox",
-      "version": "1.6.4",
-      "type": "drupal-library",
-      "dist": {
-        "url": "https://github.com/jackmoore/colorbox/archive/1.6.4.zip",
-        "type": "zip"
-        }
-      }
-    }               
-  ],
-  "config": {
-    "optimize-autoloader": true
-  },  
-  "scripts": {
-    "post-install-cmd": [
-      "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
-    ],
-    "post-update-cmd": [
-      "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
-    ]
+    }
   },
   "require": {
-    "composer/installers": "1.5.0",
-    "oomphinc/composer-installers-extender": "1.1.2",
-    "cweagans/composer-patches": "1.6.4",
-    "drupal-composer/drupal-scaffold": "2.4.0",
-    "drupal/drupal-library-installer-plugin": "0.3",
-    "drupalcoders/quick_start": "1.0-rc2"
+    "composer/installers": "^1.5.0",
+    "oomphinc/composer-installers-extender": "^1.1.2",
+    "cweagans/composer-patches": "^1.6.4",
+    "drupal-composer/drupal-scaffold": "^2.4.0",
+    "drupal/drupal-library-installer-plugin": "^0.3",
+    "webflo/drupal-finder": "^1.1.0",
+    "webmozart/path-util": "^2.3.0",
+    "drupalcoders/quick_start": "2.0-beta01"
+  },
+  "config": {
+    "bin-dir": "bin/",
+    "secure-http": false,
+    "optimize-autoloader": true,
+    "preferred-install": {
+      "drupal/core": "dist"
+    }
+  },
+  "scripts": {
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    "pre-install-cmd": ["QuickStart\\composer\\ScriptHandler::checkComposerVersion"],
+    "pre-update-cmd": ["QuickStart\\composer\\ScriptHandler::checkComposerVersion"],
+    "post-install-cmd": [
+      "QuickStart\\composer\\ScriptHandler::createRequiredFiles",
+      "QuickStart\\composer\\ScriptHandler::removeGitDirectories",
+      "@composer drupal-scaffold"
+    ],
+    "post-update-cmd": [
+      "QuickStart\\composer\\ScriptHandler::createRequiredFiles",
+      "QuickStart\\composer\\ScriptHandler::removeGitDirectories"
+    ],
+    "post-drupal-scaffold-cmd": ["QuickStart\\composer\\ScriptHandler::postDrupalScaffoldProcedure"]
   },
   "extra": {
+    "branch-alias": {
+      "dev-8.x-2.x": "8.2.x-dev"
+    },
+    "installer-types": [
+      "bower-asset",
+      "npm-asset"
+    ],
     "installer-paths": {
       "docroot/core": ["drupal/core"],
       "docroot/profiles/{$name}": ["type:drupal-profile"],
       "docroot/modules/contrib/{$name}": ["type:drupal-module"],
       "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
-      "docroot/libraries/{$name}": ["type:drupal-library"],
+      "docroot/libraries/slick": ["npm-asset/slick-carousel"],
+      "docroot/libraries/ace": ["npm-asset/ace-builds"],
+      "docroot/libraries/{$name}": [
+        "type:drupal-library",
+        "type:bower-asset",
+        "type:npm-asset"
+      ],
       "docroot/modules/custom/{$name}": ["type:drupal-custom-module"],
       "docroot/themes/custom/{$name}": ["type:drupal-custom-theme"],
       "drush/contrib/{$name}": ["type:drupal-drush"]
+    },
+    "drupal-libraries": {
+      "library-directory": "docroot/libraries",
+      "libraries": [
+        {"name": "dropzone","package": "npm-asset/dropzone"},
+        {"name": "blazy", "package": "npm-asset/blazy"},
+        {"name": "slick", "package": "npm-asset/slick-carousel"},
+        {"name": "ace", "package": "npm-asset/ace-builds"}
+      ]
     },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true
