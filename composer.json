@@ -34,7 +34,7 @@
     "drupal/drupal-library-installer-plugin": "^0.3",
     "webflo/drupal-finder": "^1.1.0",
     "webmozart/path-util": "^2.3.0",
-    "drupalcoders/quick_start": "2.0-beta01"
+    "drupalcoders/quick_start": "2.0-beta03"
   },
   "config": {
     "bin-dir": "bin/",
