@@ -65,10 +65,10 @@
       "type": "package",
       "package": {
       "name": "ajaxorg/ace-builds",
-      "version": "v1.2.6",
+      "version": "v1.4.2",
       "type": "drupal-library",
       "dist": {
-        "url": "https://github.com/ajaxorg/ace-builds/archive/v1.2.6.zip",
+        "url": "https://github.com/ajaxorg/ace-builds/archive/v1.4.2.zip",
         "type": "zip"
         }
       }
